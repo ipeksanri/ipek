@@ -8,7 +8,7 @@ Your app description
 
 class Constants(BaseConstants):
     name_in_url = 'Econ400'
-    players_per_group = 2
+    players_per_group = 6
     num_rounds = 1
     instructions_template = 'Econ400/instructions.html'
     instforgame_template = 'Econ400/instforgame.html'
@@ -191,7 +191,7 @@ class Player(BasePlayer):
     guess6 = models.StringField(label="What is your estimation about Ayşe's choice?",
                                 widget=widgets.RadioSelectHorizontal, choices=[["A", "Option A"], ["B", "Option B"]])
     result = models.IntegerField(initial=0)
-    result2 = models.IntegerField(initial=0)
+    
 
 
     def b_counter(self):
