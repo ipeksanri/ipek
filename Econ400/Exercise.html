@@ -1,0 +1,143 @@
+{{ block title }}
+   Exercise
+{{ endblock }}
+{{ block content }}
+
+
+
+<p>
+    In this exercise, you will decide whether to choose option A or B. You will be paid based on your decisions and assigned probabilities. In each row, both option A and B have different probabilities.</p>
+ <p>
+     For example, in row 1, if you choose option A, a dice will be thrown and if the dice comes as 1 you will earn 40 ECU, otherwise, you will be paid 32 ECU. If you choose option B, if dice comes 1, you will earn 77 ECU, otherwise 2 ECU. For the last row, if you choose option A, you will earn 40 ECU, and if you choose option B your earning will be 77 ECU for sure.
+</p>
+<b>8 ECU = 1 TL</b>
+<p>
+    Your payment will be made by randomly choosing one of your decisions in 10 rows, after the experiment ends.
+</p>
+<p>
+    After the exercise, please answer the survey.
+</p>
+<p>
+    Please choose one of the options for each row. The ratios are the probability of earning the stated ECU.
+</p>
+
+<div class="row">
+        <div class="col-md-9 col-md-offset-3">
+            <table class="table table-hover">
+                <tr>
+                    <th colspan="3"></th>
+                    <th colspan="2">Options</th>
+                    <th colspan="1">Selection</th>
+                    <separator string="Links" colspan="4"/>
+
+                </tr>
+                <tr>
+                    <th colspan="2"></th>
+                    <th>Option A</th>
+                    <th>Option B</th>
+
+                </tr>
+                <tr>
+                    <th rowspan="1"><span class=>1.</span> </th>
+
+                    <td> with 1/10 probability you earn 40 ECU </td>
+                    <td>  with 9/10 probability you earn 40 ECU </td>
+
+                    <td>with 1/10 probability you earn 77 ECU </td>
+                    <td> with 9/10 probability you earn 2 ECU </td>
+
+             <th>{{ form.r1 }}</th>
+                    </tr>
+
+
+                   <th rowspan="1"><span class=>2.</span> </th>
+
+                    <td> with 2/10 probability you earn 40 ECU </td>
+                    <td> with 8/10 probability you earn 40 ECU </td>
+                    <td> with 2/10 probability you earn 77 ECU </td>
+                    <td> with 8/10 probability you earn 2 ECU </td>
+                <th>{{ form.r2 }}</th>
+                 <tr>
+                    <th rowspan="1"><span class=>3.</span> </th>
+
+                    <td> with 3/10 probability you earn 40 ECU </td>
+                    <td> with 7/10 probability you earn 40 ECU </td>
+                    <td> with 3/10 probability you earn 77 ECU </td>
+                    <td> with 7/10 probability you earn 2 ECU </td>
+                     <th>{{ form.r3 }}</th>
+                 </tr>
+                 <tr>
+                    <th rowspan="1"><span class=>4.</span> </th>
+
+                    <td> with 4/10 probability you earn 40 ECU </td>
+                    <td> with 6/10 probability you earn 40 ECU </td>
+                    <td> with 4/10 probability you earn 77 ECU </td>
+                    <td> with 6/10 probability you earn 2 ECU </td>
+                      <th>{{ form.r4 }}</th>
+                 </tr>
+                 <tr>
+                    <th rowspan="1"><span class=>5.</span> </th>
+
+                    <td> with 5/10 probability you earn 40 ECU </td>
+                    <td> with 5/10 probability you earn 40 ECU </td>
+                    <td> with 5/10 probability you earn 77 ECU </td>
+                    <td> with 5/10 probability you earn 2 ECU </td>
+                      <th>{{ form.r5 }}</th>
+                 </tr>
+                 <tr>
+                    <th rowspan="1"><span class=>6.</span> </th>
+
+                    <td> with 6/10 probability you earn 40 ECU </td>
+                    <td> with 4/10 probability you earn 40 ECU </td>
+                    <td> with 6/10 probability you earn 77 ECU </td>
+                    <td> with 4/10 probability you earn 2 ECU </td>
+                      <th>{{ form.r6 }}</th>
+                 </tr>
+                 <tr>
+                    <th rowspan="1"><span class=>7.</span> </th>
+
+                    <td> with 7/10 probability you earn 40 ECU </td>
+                    <td> with 3/10 probability you earn 40 ECU </td>
+                    <td> with 7/10 probability you earn 77 ECU </td>
+                    <td> with 3/10 probability you earn 2 ECU </td>
+                      <th>{{ form.r7 }}</th>
+                 </tr>
+                 <tr>
+                    <th rowspan="1"><span class=>8.</span> </th>
+
+                    <td> with 8/10 probability you earn 40 ECU </td>
+                    <td> with 2/10 probability you earn 40 ECU </td>
+                    <td> with 8/10 probability you earn 77 ECU </td>
+                    <td> with 2/10 probability you earn 2 ECU </td>
+                      <th>{{ form.r8 }}</th>
+                 </tr>
+                 <tr>
+                    <th rowspan="1"><span class=>9.</span> </th>
+
+                    <td> with 9/10 probability you earn 40 ECU </td>
+                    <td> with 1/10 probability you earn 40 ECU </td>
+                    <td> with 9/10 probability you earn 77 ECU </td>
+                    <td> with 1/10 probability you earn 2 ECU </td>
+                      <th>{{ form.r9 }}</th>
+                 </tr>
+                 <tr>
+                    <th rowspan="1"><span class=>10.</span> </th>
+
+                    <td> you earn 40 ECU for sure </td>
+                     <td>  </td> <td>  </td>
+                    <td> you earn 77 ECU for sure </td>
+
+                      <th>{{ form.r10 }}</th>
+
+                 </tr>
+                <tr>
+
+            </table>
+        </div>
+    </div>
+
+
+    {{ next_button }}
+
+{{ endblock }}
+

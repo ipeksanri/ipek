@@ -1,0 +1,98 @@
+{{ block title }}Results{{ endblock }}
+{{ block content }}
+<p>
+You will be paid based on results below plus 5 TL (participation fee).
+       Your total earning is [ {{ result }} / 2 + (your random earning from the exercise) / 4 + 5 ] TL .
+</p>
+ <p>   Please take a screenshot of this page and e-mail to :  ipek.sanri@metu.edu.tr </p>
+
+<p>
+    <b> 1. MINI GUESS GAME RESULTS</b>
+</p>
+<p> Your guesses are : </p>
+    <table class="table">
+    <tr>
+        <th>Mustafa: {{ player.guess1}} </th>
+        <th>Zeynep: {{ player.guess2}} </th>
+        <th>Ahmet: {{ player.guess3}} </th>
+        <th>Ali: {{ player.guess5}}  </th>
+        <th>Yusuf: {{ player.guess6}}</th>
+
+    </tr>
+    </table>
+<p> You earned 2 ECU for each correct answer. </p>
+
+
+<p> <b> 2. GAME RESULTS</b> </p>
+
+
+    <p>
+        <b>  You chose:  Option {{ player.choice }} </b>
+    </p>
+
+<p>Your group members chose: </p>
+
+<table>
+        {{ for other in others }}
+    <tr>
+        <td>Player {{ other.id_in_group }}</td>
+        <td>    </td>
+        <td>{{ other.choice }}</td>
+    </tr>
+        {{ endfor }}
+</table>
+
+
+        <b> Your result in total (from the mini guess game and the game): {{ result }} ECU</b>
+<p> 2 ECU = 1 Tl </p>
+<p> <b> 3. EXERCISE RESULTS</b> </p>
+    <p>
+        Your payment from the exercise will be given according to <b> row {{ player.random_number7 }}</b>
+        and the <b> dice came {{ player.random_number8 }} </b>.
+    </p>
+
+
+    <img src="https://i.imgur.com/6EYE7e7.png" width="1000px" />
+
+<p>
+   <b> Your choices are: </b>
+</p>
+<table class="table">
+    <tr>
+        <th> row 1: {{ player.r1 }} </th>
+        <th> row 2: {{ player.r2 }} </th>
+        <th>row 3:  {{ player.r3 }} </th>
+        <th>row 4:  {{ player.r4 }} </th>
+        <th>row 5:  {{ player.r5 }}</th>
+        <th> row 6:  {{ player.r6 }}</th>
+        <th> row 7:  {{ player.r7 }} </th>
+        <th>row 8:  {{ player.r8 }}</th>
+        <th>row 9:  {{ player.r9 }}</th>
+        <th>  row 10: {{ player.r10 }}</th>   
+    </tr>
+</table>
+
+<p> 8 ECU = 1 TL for the exercise. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {{ next_button }}
+
+
+
+{{ endblock }}

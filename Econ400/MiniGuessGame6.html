@@ -1,0 +1,48 @@
+{{ block title }}
+    Mini Guess Game
+{{ endblock }}
+{{ block content }}
+{{ include Constants.instforgame_template }}
+<div class="row">
+        <div class="col-md-7 col-md-offset-2">
+            <table class="table table-hover">
+                <tr>
+                    <th colspan="2"></th>
+                    <th colspan="2">The Other Participants</th>
+                </tr>
+                <tr>
+                    <th colspan="2"></th>
+                    <th>If less than 3 people choose Option B</th>
+                    <th>If 3 or more people choose Option B</th>
+                </tr>
+                <tr>
+                    <th rowspan="2"><span class="rotate90">You</span> </th>
+                    <th>Option A</th>
+                    <td> 8 ECU </td>
+                    <td> 8 ECU </td>
+                </tr>
+                <tr>
+                    <th>Option B</th>
+                    <td> 2 ECU </td>
+                    <td> 24 ECU </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+<p>
+    Your group consist of 6 people: Mustafa, Zeynep, Ahmet, Emine, Elif, and Ayşe.
+</p>
+<p>
+    You are <b>Ayşe</b>.
+</p>
+<p>
+    Please try to guess your group member's choice. If your estimations are correct, you will earn 2 ECU (1 TL) for each correct guess.
+</p>
+
+{{formfields}}
+
+  {{ next_button }}
+
+
+
+{{ endblock }}
