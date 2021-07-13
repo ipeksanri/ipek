@@ -4,7 +4,7 @@ from os import environ
 SESSION_CONFIGS = [
     dict(
         name='Econ400',
-        num_demo_participants=2,
+        num_demo_participants=6,
         app_sequence=['Econ400']
     )
 
