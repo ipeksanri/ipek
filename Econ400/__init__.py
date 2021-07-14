@@ -239,6 +239,8 @@ class Player(BasePlayer):
 def other_player(player: Player):
     return player.get_others_in_group()[0]
 
+def get_player(self):
+    return self.get_players()[0]
 
 # PAGES
 class Introduction(Page):
