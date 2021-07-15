@@ -1,10 +1,9 @@
 {{ block title }}Results{{ endblock }}
 {{ block content }}
 <p>
-You will be paid based on results below plus 5 TL (participation fee).
-    Your total earning is [ {{ result  }} / 2  + (your random earning from the exercise) / 8 + 5 ] TL .
+<b> Your final earning is {{ payoff }} TL.  </b> You can calculate your earning from the results below.
 </p>
- <p>   Please take a screenshot of this page and e-mail to :  ipek.sanri@metu.edu.tr </p>
+ <p>  If there is a problem, please take a screenshot of this page and e-mail to :  ipek.sanri@metu.edu.tr </p>
 
 <p>
     <b> 1. MINI GUESS GAME RESULTS</b>
@@ -12,25 +11,25 @@ You will be paid based on results below plus 5 TL (participation fee).
 <p> Your guesses are : </p>
     <table class="table">
     <tr>
-        <th>Mustafa : {{ player.guess1}} </th>
-        <th>Zeynep : {{ player.guess2}} </th>
-        <th>Ahmet : {{ player.guess3}} </th>
-        <th>Elif : {{ player.guess5}}  </th>
-        <th>Ayşe : {{ player.guess6}}</th>
+        <th>Mustafa: {{ player.guess1}} </th>
+        <th>Zeynep: {{ player.guess2}} </th>
+        <th>Ahmet: {{ player.guess3}} </th>
+        <th>Ali: {{ player.guess5}}  </th>
+        <th>Yusuf: {{ player.guess6}}</th>
 
     </tr>
-</table>
-
+    </table>
 <p> You earned 2 ECU for each correct answer. </p>
 
 
 <p> <b> 2. GAME RESULTS</b> </p>
 
+
     <p>
-           <b> You chose:  Option {{ player.choice }} </b>
-<p> Player's real choices are : </p>
+        <b>  You chose:  Option {{ player.choice }} </b>
+    </p>
 
-
+<p>Your group members chose: </p>
 
 <table>
         {{ for other in others }}
@@ -43,21 +42,19 @@ You will be paid based on results below plus 5 TL (participation fee).
 </table>
 
 
-
-
-<p> <b> Your result in total (from the mini guess game and the game): {{ result }} ECU </b>    </p>
+        <b> Your result in total (from the mini guess game and the game): {{ result }} ECU</b>
 <p> 2 ECU = 1 Tl </p>
 <p> <b> 3. EXERCISE RESULTS</b> </p>
-
     <p>
-        Your payment from the exercise will be given according to <b> row {{ player.random_number }}</b>
-        and the <b> dice came {{ player.random_number2 }} </b>.
+        Your payment from the exercise will be given according to <b> row {{ player.random_row_player }}</b>
+        and the <b> dice came {{ player.random_dice_player }} </b>.
     </p>
+
 
     <img src="https://i.imgur.com/6EYE7e7.png" width="1000px" />
 
 <p>
-    <b> Your choices are: </b>
+   <b> Your choices are: </b>
 </p>
 <table class="table">
     <tr>
@@ -70,10 +67,28 @@ You will be paid based on results below plus 5 TL (participation fee).
         <th> row 7:  {{ player.r7 }} </th>
         <th>row 8:  {{ player.r8 }}</th>
         <th>row 9:  {{ player.r9 }}</th>
-        <th>row 10: {{ player.r10 }}</th>
+        <th>  row 10: {{ player.r10 }}</th>   
     </tr>
 </table>
+
 <p> 8 ECU = 1 TL for the exercise. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     {{ next_button }}
 
