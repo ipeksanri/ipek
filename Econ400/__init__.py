@@ -13,10 +13,7 @@ class Constants(BaseConstants):
     instructions_template = 'Econ400/instructions.html'
     instforgame_template = 'Econ400/instforgame.html'
     exercise_template = 'Econ400/exercise.html'
-    payoffa = 40
-    payoffa2 = 32
-    payoffb = 77
-    payoffb2 = 2
+
 
 
 class Subsession(BaseSubsession):
@@ -405,7 +402,7 @@ class Result6(Page):
         return player.id_in_group == 6
 
 
-page_sequence = [Introduction, MiniGuessGame, MiniGuessGame2, MiniGuessGame3,
+page_sequence = [Introduction, MyPage, MiniGuessGame, MiniGuessGame2, MiniGuessGame3,
                  MiniGuessGame4, MiniGuessGame5, MiniGuessGame6, Game,
-                 Exercise, ResultsWaitPage, Results, Result2, Result3, Result4,
-                 Result5, Result6, Questions, MyPage]
+                 Exercise, Questions, ResultsWaitPage, Results, Result2, Result3, Result4,
+                 Result5, Result6]
