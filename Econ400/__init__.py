@@ -250,7 +250,7 @@ class MyPage(Page):
 
     @staticmethod
     def error_message(player, values):
-        solutions = dict(k1=8, k2=8, k3=2, k4=24, k5=2, k6=24, k7=24)
+        solutions = dict(k1=8, k2=8, k3=2, k4=24, k5=2, k6=2, k7=24)
 
         return {f: 'Wrong answer' for f in solutions if values[f] != solutions[f]}
 
