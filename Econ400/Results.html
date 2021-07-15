@@ -1,10 +1,9 @@
 {{ block title }}Results{{ endblock }}
 {{ block content }}
 <p>
-You will be paid based on results below plus 5 TL (participation fee).
-    Your total earning is [ {{ result  }} / 2  + (your random earning from the exercise) / 8 + 5 ] TL .
+<b> Your final earning is {{ payoff }} TL.  </b> You can calculate your earning from the results below.
 </p>
- <p>   Please take a screenshot of this page and e-mail to :  ipek.sanri@metu.edu.tr </p>
+ <p>  If there is a problem, please take a screenshot of this page and e-mail to :  ipek.sanri@metu.edu.tr </p>
 
 <p>
     <b> 1. MINI GUESS GAME RESULTS</b>
@@ -15,8 +14,8 @@ You will be paid based on results below plus 5 TL (participation fee).
         <th>Zeynep : {{ player.guess2}} </th>
         <th>Ahmet : {{ player.guess3}} </th>
         <th>Emine : {{ player.guess4}} </th>
-        <th>Elif : {{ player.guess5}}  </th>
-        <th>Ayşe : {{ player.guess6}}</th>
+        <th>Ali : {{ player.guess5}}  </th>
+        <th>Yusuf : {{ player.guess6}}</th>
 
     </tr>
 </table>
@@ -50,8 +49,8 @@ You will be paid based on results below plus 5 TL (participation fee).
 <p> <b> 3. EXERCISE RESULTS</b> </p>
 
     <p>
-        Your payment from the exercise will be given according to <b> row {{ player.random_number }}</b>
-        and the <b> dice came {{ player.random_number2 }} </b>.
+        Your payment from the exercise will be given according to <b> row {{ player.random_row_player }}</b>
+        and the <b> dice came {{ player.random_dice_player }} </b>.
     </p>
 
     <img src="https://i.imgur.com/6EYE7e7.png" width="1000px" />
