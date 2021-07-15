@@ -15,7 +15,6 @@ class Constants(BaseConstants):
     exercise_template = 'Econ400/exercise.html'
 
 
-
 class Subsession(BaseSubsession):
     pass
 
@@ -24,113 +23,7 @@ class Group(BaseGroup):
     pass
 
 
-def getRandomNumber19():
-    return np.random.randint(low=1, high=11)
-
-
-def getRandomNumber18():
-    return np.random.randint(low=1, high=11)
-
-
-def getRandomNumber17():
-    return np.random.randint(low=1, high=11)
-
-
-def getRandomNumber16():
-    return np.random.randint(low=1, high=11)
-
-
-def getRandomNumber15():
-    return np.random.randint(low=1, high=11)
-
-
-def getRandomNumber14():
-    return np.random.randint(low=1, high=11)
-
-
-def getRandomNumber13():
-    return np.random.randint(low=1, high=11)
-
-
-def getRandomNumber12():
-    return np.random.randint(low=1, high=11)
-
-
-def getRandomNumber11():
-    return np.random.randint(low=1, high=11)
-
-
-def getRandomNumber10():
-    return np.random.randint(low=1, high=11)
-
-
-def getRandomNumber9():
-    return np.random.randint(low=1, high=11)
-
-
-def getRandomNumber8():
-    return np.random.randint(low=1, high=11)
-
-
-def getRandomNumber7():
-    return np.random.randint(low=1, high=11)
-
-
-def getRandomNumber6():
-    return np.random.randint(low=1, high=11)
-
-
-def getRandomNumber5():
-    return np.random.randint(low=1, high=11)
-
-
-def getRandomNumber4():
-    return np.random.randint(low=1, high=11)
-
-
-def getRandomNumber3():
-    return np.random.randint(low=1, high=11)
-
-
-def getRandomNumber2():
-    return np.random.randint(low=1, high=11)
-
-
-def getRandomNumber():
-    return np.random.randint(low=1, high=11)
-
-
-def getRandomNumber0():
-    return np.random.randint(low=1, high=11)
-
-
-def getRandomNumber00():
-    return np.random.randint(low=1, high=11)
-
-
 class Player(BasePlayer):
-    random_number00 = models.IntegerField(initial=getRandomNumber00())
-    random_number0 = models.IntegerField(initial=getRandomNumber0())
-    random_number = models.IntegerField(initial=getRandomNumber())
-    random_number2 = models.IntegerField(initial=getRandomNumber2())
-    random_number3 = models.IntegerField(initial=getRandomNumber3())
-    random_number4 = models.IntegerField(initial=getRandomNumber4())
-    random_number5 = models.IntegerField(initial=getRandomNumber5())
-    random_number6 = models.IntegerField(initial=getRandomNumber6())
-    random_number7 = models.IntegerField(initial=getRandomNumber7())
-    random_number8 = models.IntegerField(initial=getRandomNumber8())
-    random_number9 = models.IntegerField(initial=getRandomNumber9())
-    random_number10 = models.IntegerField(initial=getRandomNumber10())
-    random_number11 = models.IntegerField(initial=getRandomNumber11())
-    random_number12 = models.IntegerField(initial=getRandomNumber12())
-    random_number13 = models.IntegerField(initial=getRandomNumber13())
-    random_number14 = models.IntegerField(initial=getRandomNumber14())
-    random_number15 = models.IntegerField(initial=getRandomNumber15())
-    random_number16 = models.IntegerField(initial=getRandomNumber16())
-    random_number17 = models.IntegerField(initial=getRandomNumber17())
-    random_number18 = models.IntegerField(initial=getRandomNumber18())
-    random_number19 = models.IntegerField(initial=getRandomNumber19())
-
     name = models.StringField(label="Please enter your name.", blank=True)
     surname = models.StringField(label="Please enter your surname.", blank=True)
     age = models.IntegerField(label="What is your age?", blank=True)
@@ -188,8 +81,9 @@ class Player(BasePlayer):
     guess6 = models.StringField(label="What is your estimation about Ayşe's choice?",
                                 widget=widgets.RadioSelectHorizontal, choices=[["A", "Option A"], ["B", "Option B"]])
     result = models.IntegerField(initial=0)
-    
-
+    payoffPlayer = models.IntegerField(initial=0)
+    random_dice_player = models.IntegerField(initial=0)
+    random_row_player = models.IntegerField(initial=0)
 
     def b_counter(self):
         result = 0
@@ -198,6 +92,38 @@ class Player(BasePlayer):
                 result += 1
         return result
 
+    def calculate_exercise(self):
+        result = 0
+        random_dice = np.random.randint(low=1, high=11)
+        random_selection = np.random.randint(low=1, high=11)
+        self.random_dice_player = random_dice
+        self.random_row_player = random_selection
+        r_list = []
+        r_list.append(self.r1)
+        r_list.append(self.r2)
+        r_list.append(self.r3)
+        r_list.append(self.r4)
+        r_list.append(self.r5)
+        r_list.append(self.r6)
+        r_list.append(self.r7)
+        r_list.append(self.r8)
+        r_list.append(self.r9)
+        r_list.append(self.r10)
+
+
+        for i in range(10):
+            if random_selection == i + 1:
+                if random_dice > i + 1:
+                    if r_list[i] == "A":
+                        result += 32
+                    elif r_list[i] == "B":
+                        result += 2
+                else:
+                    if r_list[i] == "A":
+                        result += 40
+                    elif r_list[i] == "B":
+                        result += 77
+        return result
 
     def calculate_result(self):
         result = 0
@@ -230,18 +156,23 @@ class Player(BasePlayer):
                 result += 2
         return result
 
+    def calculate_payoff(self):
+        return self.calculate_result() / 2 + self.calculate_exercise() / 8 + 5
+
 
 # FUNCTIONS
 
 def other_player(player: Player):
     return player.get_others_in_group()[0]
 
+
 def get_player(self):
     return self.get_players()[0]
 
+
 # PAGES
 class Introduction(Page):
-    
+    timeout_seconds = 90
 
 
 class MyPage(Page):
@@ -333,7 +264,8 @@ class Results(Page):
     @staticmethod
     def vars_for_template(player: Player):
         return dict(others=player.get_others_in_group(),
-                    result=player.calculate_result())
+                    result=player.calculate_result(), exercise_result=player.calculate_exercise(),
+                    payoff=player.calculate_payoff())
 
     @staticmethod
     def is_displayed(player):
@@ -345,8 +277,8 @@ class Result2(Page):
     @staticmethod
     def vars_for_template(player: Player):
         return dict(others=player.get_others_in_group(),
-                    result=player.calculate_result())
-
+                    result=player.calculate_result(), exercise_result=player.calculate_exercise(),
+                    payoff=player.calculate_payoff())
 
     @staticmethod
     def is_displayed(player):
@@ -357,8 +289,8 @@ class Result3(Page):
     @staticmethod
     def vars_for_template(player: Player):
         return dict(others=player.get_others_in_group(),
-                    result=player.calculate_result())
-
+                    result=player.calculate_result(), exercise_result=player.calculate_exercise(),
+                    payoff=player.calculate_payoff())
 
     @staticmethod
     def is_displayed(player):
@@ -369,8 +301,8 @@ class Result4(Page):
     @staticmethod
     def vars_for_template(player: Player):
         return dict(others=player.get_others_in_group(),
-                    result=player.calculate_result())
-
+                    result=player.calculate_result(), exercise_result=player.calculate_exercise(),
+                    payoff=player.calculate_payoff())
 
     @staticmethod
     def is_displayed(player):
@@ -381,8 +313,8 @@ class Result5(Page):
     @staticmethod
     def vars_for_template(player: Player):
         return dict(others=player.get_others_in_group(),
-                    result=player.calculate_result())
-
+                    result=player.calculate_result(), exercise_result=player.calculate_exercise(),
+                    payoff=player.calculate_payoff())
 
     @staticmethod
     def is_displayed(player):
@@ -394,8 +326,8 @@ class Result6(Page):
     @staticmethod
     def vars_for_template(player: Player):
         return dict(others=player.get_others_in_group(),
-                    result=player.calculate_result())
-
+                    result=player.calculate_result(), exercise_result=player.calculate_exercise(),
+                    payoff=player.calculate_payoff())
 
     @staticmethod
     def is_displayed(player):
