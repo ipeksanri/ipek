@@ -224,7 +224,7 @@ class Player(BasePlayer):
         if self.choice == "A":
             result += 8
         elif self.choice == "B":
-            if self.b_counter() >= 2:
+            if self.b_counter() >= 3:
                 result += 24
             else:
                 result += 2
@@ -402,7 +402,7 @@ class Result6(Page):
         return player.id_in_group == 6
 
 
-page_sequence = [Introduction, MiniGuessGame, MiniGuessGame2, MiniGuessGame3,
+page_sequence = [Introduction, MyPage, MiniGuessGame, MiniGuessGame2, MiniGuessGame3,
                  MiniGuessGame4, MiniGuessGame5, MiniGuessGame6, Game,
-                 Exercise, ResultsWaitPage, Results, Result2, Result3, Result4,
-                 Result5, Result6, Questions, MyPage]
+                 Exercise, Questions, ResultsWaitPage, Results, Result2, Result3, Result4,
+                 Result5, Result6]
