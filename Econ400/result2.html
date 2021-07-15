@@ -2,18 +2,21 @@
 {{ block content }}
 <p>
 You will be paid based on results below plus 5 TL (participation fee).
-       Your total earning is [ {{ result }} / 2 + (your random earning from the exercise) / 8 + 5 ] TL .
+    Your total earning is [ {{ result  }} / 2  + (your random earning from the exercise) / 8 + 5 ] TL .
 </p>
  <p>   Please take a screenshot of this page and e-mail to :  ipek.sanri@metu.edu.tr </p>
 
+<p>
+    <b> 1. MINI GUESS GAME RESULTS</b>
+</p>
 <p> Your guesses are : </p>
-<table class="table">
+    <table class="table">
     <tr>
-        <th>Mustafa: {{ player.guess1}} </th>
-        <th>Ahmet: {{ player.guess3}} </th>
-        <th>Emine: {{ player.guess4}} </th>
-        <th>Ali: {{ player.guess5}}  </th>
-        <th>Yusuf: {{ player.guess6}}</th>
+        <th>Mustafa : {{ player.guess1}} </th>
+        <th>Ahmet : {{ player.guess3}} </th>
+        <th>Emine : {{ player.guess4}} </th>
+        <th>Elif : {{ player.guess5}}  </th>
+        <th>Ayşe : {{ player.guess6}}</th>
 
     </tr>
 </table>
@@ -25,9 +28,8 @@ You will be paid based on results below plus 5 TL (participation fee).
 
     <p>
            <b> You chose:  Option {{ player.choice }} </b>
-    </p>
-</table>
-<p>Your group members chose: </p>
+<p> Player's real choices are : </p>
+
 
 
 <table>
@@ -42,20 +44,20 @@ You will be paid based on results below plus 5 TL (participation fee).
 
 
 
-<b> Your result in total (from the mini guess game and the game): {{ result }} ECU</b>
+
+<p> <b> Your result in total (from the mini guess game and the game): {{ result }} ECU </b>    </p>
 <p> 2 ECU = 1 Tl </p>
-
 <p> <b> 3. EXERCISE RESULTS</b> </p>
-    <p>
-        Your payment from the exercise will be given according to <b> row {{ player.random_number3 }}</b>
-        and the <b> dice came {{ player.random_number4 }} </b>.
-    </p>
 
+    <p>
+        Your payment from the exercise will be given according to <b> row {{ player.random_number }}</b>
+        and the <b> dice came {{ player.random_number2 }} </b>.
+    </p>
 
     <img src="https://i.imgur.com/6EYE7e7.png" width="1000px" />
 
 <p>
-   <b> Your choices are: </b>
+    <b> Your choices are: </b>
 </p>
 <table class="table">
     <tr>
@@ -71,25 +73,7 @@ You will be paid based on results below plus 5 TL (participation fee).
         <th>row 10: {{ player.r10 }}</th>
     </tr>
 </table>
-
 <p> 8 ECU = 1 TL for the exercise. </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     {{ next_button }}
 
