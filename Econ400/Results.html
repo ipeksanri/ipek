@@ -4,26 +4,7 @@
 <b> Your final earning is {{ payoff }} TL.  </b> You can calculate your earning from the results below.
 </p>
  <p>  If there is a problem, please take a screenshot of this page and e-mail to :  ipek.sanri@metu.edu.tr </p>
-
-<p>
-    <b> 1. MINI GUESS GAME RESULTS</b>
-</p>
-<p> Your guesses are : </p>
-    <table class="table">
-    <tr>
-        <th>Zeynep : {{ player.guess2}} </th>
-        <th>Ahmet : {{ player.guess3}} </th>
-        <th>Emine : {{ player.guess4}} </th>
-        <th>Ali : {{ player.guess5}}  </th>
-        <th>Yusuf : {{ player.guess6}}</th>
-
-    </tr>
-</table>
-
-<p> You earned 2 ECU for each correct answer. </p>
-
-
-<p> <b> 2. GAME RESULTS</b> </p>
+<p> <b> PART 2</b> </p>
 
     <p>
            <b> You chose:  Option {{ player.choice }} </b>
@@ -41,12 +22,31 @@
         {{ endfor }}
 </table>
 
+<p>
+    <b> PART 3</b>
+</p>
+<p> Your guesses are : </p>
+    <table class="table">
+    <tr>
+        <th>Zeynep : {{ player.guess2}} </th>
+        <th>Ahmet : {{ player.guess3}} </th>
+        <th>Emine : {{ player.guess4}} </th>
+        <th>Ali : {{ player.guess5}}  </th>
+        <th>Yusuf : {{ player.guess6}}</th>
+
+    </tr>
+</table>
+
+<p> You earned 2 ECU for each correct answer. </p>
+
+
+
 
 
 
 <p> <b> Your result in total (from the mini guess game and the game): {{ result }} ECU </b>    </p>
 <p> 2 ECU = 1 Tl </p>
-<p> <b> 3. EXERCISE RESULTS</b> </p>
+<p> <b> PART 3</b> </p>
 
     <p>
         Your payment from the exercise will be given according to <b> row {{ player.random_row_player }}</b>
