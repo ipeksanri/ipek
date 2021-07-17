@@ -274,7 +274,7 @@ class Results(Page):
 
 class Result2(Page):
 
-    @staticmethod
+   @staticmethod
     def vars_for_template(player: Player):
         return dict(others=player.get_others_in_group(),
                     result=player.calculate_result(), exercise_result=player.calculate_exercise(),
@@ -295,7 +295,6 @@ class Result3(Page):
     @staticmethod
     def is_displayed(player):
         return player.id_in_group == 3
-
 
 class Result4(Page):
     @staticmethod
@@ -320,7 +319,6 @@ class Result5(Page):
     def is_displayed(player):
         return player.id_in_group == 5
 
-
 class Result6(Page):
 
     @staticmethod
@@ -334,7 +332,7 @@ class Result6(Page):
         return player.id_in_group == 6
 
 
-page_sequence = [Introduction, MyPage, MiniGuessGame, MiniGuessGame2, MiniGuessGame3,
-                 MiniGuessGame4, MiniGuessGame5, MiniGuessGame6, Game,
+page_sequence = [Introduction, MyPage, Game, MiniGuessGame, MiniGuessGame2, MiniGuessGame3,
+                 MiniGuessGame4, MiniGuessGame5, MiniGuessGame6, 
                  Exercise, Questions, ResultsWaitPage, Results, Result2, Result3, Result4,
                  Result5, Result6]
